@@ -1,1 +1,0 @@
-c:\users\administrator.win-5vo0ddv11j5\documents\visual studio 2012\Projects\HelloWorld\HelloWorld\bin\Debug\HelloWorld.exe.config
