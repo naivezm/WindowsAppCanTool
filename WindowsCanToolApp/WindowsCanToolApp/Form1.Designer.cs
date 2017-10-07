@@ -33,6 +33,7 @@
             this.cOM口设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cAN信息设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cAN信息显示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cAN信息发送ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,10 +41,11 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.基本设置ToolStripMenuItem,
-            this.cAN信息显示ToolStripMenuItem});
+            this.cAN信息显示ToolStripMenuItem,
+            this.cAN信息发送ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(284, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(393, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -74,11 +76,17 @@
             this.cAN信息显示ToolStripMenuItem.Size = new System.Drawing.Size(94, 21);
             this.cAN信息显示ToolStripMenuItem.Text = "CAN信息显示";
             // 
+            // cAN信息发送ToolStripMenuItem
+            // 
+            this.cAN信息发送ToolStripMenuItem.Name = "cAN信息发送ToolStripMenuItem";
+            this.cAN信息发送ToolStripMenuItem.Size = new System.Drawing.Size(94, 21);
+            this.cAN信息发送ToolStripMenuItem.Text = "CAN信息发送";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(393, 294);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -97,6 +105,7 @@
         private System.Windows.Forms.ToolStripMenuItem cOM口设置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cAN信息设置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cAN信息显示ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cAN信息发送ToolStripMenuItem;
     }
 }
 
