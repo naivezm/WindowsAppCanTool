@@ -35,6 +35,7 @@
             this.cAN信息显示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cAN信息发送ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.加载信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,9 +48,10 @@
             this.加载信息ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(393, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(665, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // 基本设置ToolStripMenuItem
             // 
@@ -90,11 +92,19 @@
             this.加载信息ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.加载信息ToolStripMenuItem.Text = "加载信息";
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(13, 28);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(640, 343);
+            this.panel1.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 294);
+            this.ClientSize = new System.Drawing.Size(665, 383);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -115,6 +125,7 @@
         private System.Windows.Forms.ToolStripMenuItem cAN信息显示ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cAN信息发送ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 加载信息ToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
