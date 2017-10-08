@@ -1,0 +1,9 @@
+E:\liyao_Git\WindowsAppCanTool\WindowsCanToolApp\WindowsCanToolApp\bin\Debug\WindowsCanToolApp.exe.config
+E:\liyao_Git\WindowsAppCanTool\WindowsCanToolApp\WindowsCanToolApp\bin\Debug\WindowsCanToolApp.exe
+E:\liyao_Git\WindowsAppCanTool\WindowsCanToolApp\WindowsCanToolApp\bin\Debug\WindowsCanToolApp.pdb
+E:\liyao_Git\WindowsAppCanTool\WindowsCanToolApp\WindowsCanToolApp\obj\Debug\WindowsCanToolApp.csprojResolveAssemblyReference.cache
+E:\liyao_Git\WindowsAppCanTool\WindowsCanToolApp\WindowsCanToolApp\obj\Debug\WindowsCanToolApp.Form1.resources
+E:\liyao_Git\WindowsAppCanTool\WindowsCanToolApp\WindowsCanToolApp\obj\Debug\WindowsCanToolApp.Properties.Resources.resources
+E:\liyao_Git\WindowsAppCanTool\WindowsCanToolApp\WindowsCanToolApp\obj\Debug\WindowsCanToolApp.csproj.GenerateResource.Cache
+E:\liyao_Git\WindowsAppCanTool\WindowsCanToolApp\WindowsCanToolApp\obj\Debug\WindowsCanToolApp.exe
+E:\liyao_Git\WindowsAppCanTool\WindowsCanToolApp\WindowsCanToolApp\obj\Debug\WindowsCanToolApp.pdb
