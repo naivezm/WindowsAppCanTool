@@ -1,6 +1,7 @@
 # Cantool Windows APP 项目需求文档
 
-> 小组成员：胡庆庆，张德胜，李耀，王杰
+> 第23组
+> 小组成员：胡庆庆（2117216020），张德胜（），李耀（2117218013），王杰（）
 
 ## 图表分析
 ![用例图](http://om0ttwn6c.bkt.clouddn.com/%E4%BE%8B%E5%9B%BEcantool.png)
