@@ -37,7 +37,6 @@
             this.cAN信号仪表盘ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cAN信号曲线ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cAN信息发送ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.加载信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,8 +56,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.基本设置ToolStripMenuItem,
             this.cAN信息显示ToolStripMenuItem,
-            this.cAN信息发送ToolStripMenuItem,
-            this.加载信息ToolStripMenuItem});
+            this.cAN信息发送ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(665, 25);
@@ -122,12 +120,6 @@
             this.cAN信息发送ToolStripMenuItem.Name = "cAN信息发送ToolStripMenuItem";
             this.cAN信息发送ToolStripMenuItem.Size = new System.Drawing.Size(94, 21);
             this.cAN信息发送ToolStripMenuItem.Text = "CAN信息发送";
-            // 
-            // 加载信息ToolStripMenuItem
-            // 
-            this.加载信息ToolStripMenuItem.Name = "加载信息ToolStripMenuItem";
-            this.加载信息ToolStripMenuItem.Size = new System.Drawing.Size(91, 21);
-            this.加载信息ToolStripMenuItem.Text = "保存CSV文件";
             // 
             // panel1
             // 
@@ -237,7 +229,6 @@
         private System.Windows.Forms.ToolStripMenuItem cAN信息设置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cAN信息显示ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cAN信息发送ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 加载信息ToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem cAN原始数据显示ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cAN信号仪表盘ToolStripMenuItem;
