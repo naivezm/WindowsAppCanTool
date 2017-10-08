@@ -41,7 +41,7 @@
 
 ### 远程数据共享
 
-- 通过 WEB API 方式将 CAN 信息更新到远程数据库 , CanTool App 能够与远程 Web Api 进行数据交换。
+- 通过 WEB API 方式将 CAN 信息更新到远程数据库 , CanTool App 能够与远程 Web Api 进行数据交换。（此功能本学期不做）
 
 ### 功能变更
 
