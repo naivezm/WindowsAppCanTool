@@ -161,7 +161,7 @@
             // 
             // Mainpanel
             // 
-            this.Mainpanel.Controls.Add(this.COMpanel);
+           
             this.Mainpanel.Location = new System.Drawing.Point(0, 29);
             this.Mainpanel.Name = "Mainpanel";
             this.Mainpanel.Size = new System.Drawing.Size(563, 332);

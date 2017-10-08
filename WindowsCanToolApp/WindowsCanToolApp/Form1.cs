@@ -24,13 +24,13 @@ namespace WindowsCanToolApp
 
         private void cAN信息设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            this.Mainpanel.Controls.Clear();
             
         }
 
         private void cOM口设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-        
+            this.Mainpanel.Controls.Add(this.COMpanel);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
