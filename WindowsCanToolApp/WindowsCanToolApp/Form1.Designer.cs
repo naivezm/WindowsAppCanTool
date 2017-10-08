@@ -34,6 +34,7 @@
             this.cAN信息设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cAN信息显示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cAN信息发送ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.加载信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +43,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.基本设置ToolStripMenuItem,
             this.cAN信息显示ToolStripMenuItem,
-            this.cAN信息发送ToolStripMenuItem});
+            this.cAN信息发送ToolStripMenuItem,
+            this.加载信息ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(393, 25);
@@ -61,13 +63,13 @@
             // cOM口设置ToolStripMenuItem
             // 
             this.cOM口设置ToolStripMenuItem.Name = "cOM口设置ToolStripMenuItem";
-            this.cOM口设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cOM口设置ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.cOM口设置ToolStripMenuItem.Text = "COM口设置";
             // 
             // cAN信息设置ToolStripMenuItem
             // 
             this.cAN信息设置ToolStripMenuItem.Name = "cAN信息设置ToolStripMenuItem";
-            this.cAN信息设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cAN信息设置ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.cAN信息设置ToolStripMenuItem.Text = "CAN信息设置";
             // 
             // cAN信息显示ToolStripMenuItem
@@ -81,6 +83,12 @@
             this.cAN信息发送ToolStripMenuItem.Name = "cAN信息发送ToolStripMenuItem";
             this.cAN信息发送ToolStripMenuItem.Size = new System.Drawing.Size(94, 21);
             this.cAN信息发送ToolStripMenuItem.Text = "CAN信息发送";
+            // 
+            // 加载信息ToolStripMenuItem
+            // 
+            this.加载信息ToolStripMenuItem.Name = "加载信息ToolStripMenuItem";
+            this.加载信息ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.加载信息ToolStripMenuItem.Text = "加载信息";
             // 
             // Form1
             // 
@@ -106,6 +114,7 @@
         private System.Windows.Forms.ToolStripMenuItem cAN信息设置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cAN信息显示ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cAN信息发送ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 加载信息ToolStripMenuItem;
     }
 }
 
