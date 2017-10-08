@@ -1,6 +1,8 @@
 # Cantool Windows APP 项目需求文档
 
-> 小组成员：胡庆庆，张德胜，李耀，王杰
+> 第23组
+
+小组成员：胡庆庆（2117216020），张德胜（），李耀（2117218013），王杰（）
 
 ## 图表分析
 ![用例图](http://om0ttwn6c.bkt.clouddn.com/%E4%BE%8B%E5%9B%BEcantool.png)
@@ -41,7 +43,7 @@
 
 ### 远程数据共享
 
-- 通过 WEB API 方式将 CAN 信息更新到远程数据库 , CanTool App 能够与远程 Web Api 进行数据交换。
+- 通过 WEB API 方式将 CAN 信息更新到远程数据库 , CanTool App 能够与远程 Web Api 进行数据交换。（此功能本学期不做）
 
 ### 功能变更
 
