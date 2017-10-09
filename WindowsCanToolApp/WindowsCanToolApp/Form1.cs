@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO.Ports;
 
 namespace WindowsCanToolApp
 {
@@ -31,6 +33,7 @@ namespace WindowsCanToolApp
         private void cOM口设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Mainpanel.Controls.Add(this.COMpanel);
+            GetCOMList();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -51,6 +54,27 @@ namespace WindowsCanToolApp
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public void GetCOMList()
+        { 
+            //RegistryKey是注册表中的顶级节点
+            //LocalMachine读取windows注册表基项HKEY_LOCAL_MACHINE
+            //OpenSubKey("Hardware\\DeviceMap\\SerialComm")只读方式读取Hardware\DeviceMap\SerialComm中的可用COM口
+            RegistryKey keyCOM=Registry.LocalMachine.OpenSubKey("Hardware\\DeviceMap\\SerialComm");
+            if (keyCOM != null)
+            {
+                string[] sSubKeys = keyCOM.GetValueNames();
+                this.comboBox1.Items.Clear();
+                foreach (string sName in sSubKeys)
+                {
+                    string sValue = (string)keyCOM.GetValue(sName);
+                    this.comboBox1.Items.Add(sValue);
+                }
+            }
+        
         }
     }
 }

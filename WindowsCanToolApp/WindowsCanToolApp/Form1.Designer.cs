@@ -93,14 +93,14 @@
             // cOM口设置ToolStripMenuItem
             // 
             this.cOM口设置ToolStripMenuItem.Name = "cOM口设置ToolStripMenuItem";
-            this.cOM口设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cOM口设置ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.cOM口设置ToolStripMenuItem.Text = "COM口设置";
             this.cOM口设置ToolStripMenuItem.Click += new System.EventHandler(this.cOM口设置ToolStripMenuItem_Click);
             // 
             // cAN信息设置ToolStripMenuItem
             // 
             this.cAN信息设置ToolStripMenuItem.Name = "cAN信息设置ToolStripMenuItem";
-            this.cAN信息设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cAN信息设置ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.cAN信息设置ToolStripMenuItem.Text = "CAN信息设置";
             this.cAN信息设置ToolStripMenuItem.Click += new System.EventHandler(this.cAN信息设置ToolStripMenuItem_Click);
             // 
@@ -161,7 +161,7 @@
             // 
             // Mainpanel
             // 
-            
+            //this.Mainpanel.Controls.Add(this.COMpanel);
             this.Mainpanel.Location = new System.Drawing.Point(0, 29);
             this.Mainpanel.Name = "Mainpanel";
             this.Mainpanel.Size = new System.Drawing.Size(563, 332);
@@ -359,6 +359,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(16, 32);
             this.comboBox1.Name = "comboBox1";
