@@ -43,7 +43,7 @@
             this.SendButton = new System.Windows.Forms.Button();
             this.SendTextBox = new System.Windows.Forms.TextBox();
             this.ReceiveTextBox = new System.Windows.Forms.TextBox();
-            this.sPort = new System.IO.Ports.SerialPort(this.components);
+            this.SerialPort = new System.IO.Ports.SerialPort(this.components);
             this.MenuStrip.SuspendLayout();
             this.MainPanel.SuspendLayout();
             this.SendReceivePanel.SuspendLayout();
@@ -74,14 +74,14 @@
             // cOM口设置ToolStripMenuItem
             // 
             this.cOM口设置ToolStripMenuItem.Name = "cOM口设置ToolStripMenuItem";
-            this.cOM口设置ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.cOM口设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cOM口设置ToolStripMenuItem.Text = "COM口设置";
             this.cOM口设置ToolStripMenuItem.Click += new System.EventHandler(this.cOM口设置ToolStripMenuItem_Click);
             // 
             // cAN信息设置ToolStripMenuItem
             // 
             this.cAN信息设置ToolStripMenuItem.Name = "cAN信息设置ToolStripMenuItem";
-            this.cAN信息设置ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.cAN信息设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cAN信息设置ToolStripMenuItem.Text = "CAN信息设置";
             this.cAN信息设置ToolStripMenuItem.Click += new System.EventHandler(this.cAN信息设置ToolStripMenuItem_Click);
             // 
@@ -122,7 +122,7 @@
             // 
             // MainPanel
             // 
-            this.MainPanel.Controls.Add(this.SendReceivePanel);
+            //this.MainPanel.Controls.Add(this.SendReceivePanel);
             this.MainPanel.Location = new System.Drawing.Point(0, 29);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(563, 332);
@@ -165,9 +165,9 @@
             this.ReceiveTextBox.Size = new System.Drawing.Size(333, 136);
             this.ReceiveTextBox.TabIndex = 0;
             // 
-            // sPort
+            // SerialPort
             // 
-            this.sPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.sPort_DataReceived);
+            this.SerialPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.sPort_DataReceived);
             // 
             // Form1
             // 
@@ -206,7 +206,7 @@
         private System.Windows.Forms.Button SendButton;
         private System.Windows.Forms.TextBox SendTextBox;
         private System.Windows.Forms.TextBox ReceiveTextBox;
-        private System.IO.Ports.SerialPort sPort;
+        private System.IO.Ports.SerialPort SerialPort;
     }
 }
 

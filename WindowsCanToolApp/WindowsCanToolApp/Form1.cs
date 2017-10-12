@@ -45,9 +45,9 @@ namespace WindowsCanToolApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            sPort.PortName = "COM2";
-            sPort.Open();
-            sPort.DataReceived += new SerialDataReceivedEventHandler(sPort_DataReceived);
+            SerialPort.PortName = "COM2";
+            SerialPort.Open();
+            SerialPort.DataReceived += new SerialDataReceivedEventHandler(sPort_DataReceived);
             //将事件处理函数，挂接到事件DataReceived 中
            
         }
@@ -82,7 +82,7 @@ namespace WindowsCanToolApp
                 //byte[] data = Encoding.Unicode.GetBytes(textBox1.Text);
                 string data = SendTextBox.Text.ToString();
                 // string str = Convert.ToBase64String(data);
-                sPort.WriteLine(data);
+                SerialPort.WriteLine(data);
                 // sPort.Close();
                 MessageBox.Show("数据发送成功！", "系统提示");
 
@@ -96,8 +96,8 @@ namespace WindowsCanToolApp
 
         private void sPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            byte[] ReDatas = new byte[sPort.BytesToRead];
-            sPort.Read(ReDatas, 0, ReDatas.Length);//读取数据
+            byte[] ReDatas = new byte[SerialPort.BytesToRead];
+            SerialPort.Read(ReDatas, 0, ReDatas.Length);//读取数据
             this.AddData(ReDatas);//输出数据
         }
          /// <summary>
