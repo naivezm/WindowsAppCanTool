@@ -26,14 +26,16 @@ namespace WindowsCanToolApp
             if (keyCOM != null)
             {
                 string[] sSubKeys = keyCOM.GetValueNames();
-                this.COMcomboBox.Items.Clear();
+                this.COMComboBox.Items.Clear();
                 foreach (string sName in sSubKeys)
                 {
                     string sValue = (string)keyCOM.GetValue(sName);
-                    this.COMcomboBox.Items.Add(sValue);
+                    this.COMComboBox.Items.Add(sValue);
                 }
             }
 
         }
+
+
     }
 }

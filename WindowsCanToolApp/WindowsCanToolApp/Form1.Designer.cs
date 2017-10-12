@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.基本设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOM口设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cAN信息设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,28 +38,29 @@
             this.cAN信号仪表盘ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cAN信号曲线ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cAN信息发送ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Mainpanel = new System.Windows.Forms.Panel();
-            this.SendReceivepanel = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.SendReceivePanel = new System.Windows.Forms.Panel();
+            this.SendButton = new System.Windows.Forms.Button();
             this.SendTextBox = new System.Windows.Forms.TextBox();
             this.ReceiveTextBox = new System.Windows.Forms.TextBox();
             this.sPort = new System.IO.Ports.SerialPort(this.components);
-            this.menuStrip1.SuspendLayout();
-            this.SendReceivepanel.SuspendLayout();
+            this.MenuStrip.SuspendLayout();
+            this.MainPanel.SuspendLayout();
+            this.SendReceivePanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // MenuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.基本设置ToolStripMenuItem,
             this.cAN信息显示ToolStripMenuItem,
             this.cAN信息发送ToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(563, 25);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            this.MenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MenuStrip.Name = "MenuStrip";
+            this.MenuStrip.Size = new System.Drawing.Size(563, 25);
+            this.MenuStrip.TabIndex = 0;
+            this.MenuStrip.Text = "menuStrip1";
+            this.MenuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // 基本设置ToolStripMenuItem
             // 
@@ -118,35 +119,35 @@
             this.cAN信息发送ToolStripMenuItem.Size = new System.Drawing.Size(94, 21);
             this.cAN信息发送ToolStripMenuItem.Text = "CAN信息发送";
             this.cAN信息发送ToolStripMenuItem.Click += new System.EventHandler(this.cAN信息发送ToolStripMenuItem_Click);
-           
             // 
-            // Mainpanel
+            // MainPanel
             // 
-            this.Mainpanel.Location = new System.Drawing.Point(0, 29);
-            this.Mainpanel.Name = "Mainpanel";
-            this.Mainpanel.Size = new System.Drawing.Size(563, 332);
-            this.Mainpanel.TabIndex = 1;
-           // this.Mainpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.Mainpanel_Paint);
+            this.MainPanel.Controls.Add(this.SendReceivePanel);
+            this.MainPanel.Location = new System.Drawing.Point(0, 29);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(563, 332);
+            this.MainPanel.TabIndex = 1;
+            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.Mainpanel_Paint);
             // 
-            // SendReceivepanel
+            // SendReceivePanel
             // 
-            this.SendReceivepanel.Controls.Add(this.button4);
-            this.SendReceivepanel.Controls.Add(this.SendTextBox);
-            this.SendReceivepanel.Controls.Add(this.ReceiveTextBox);
-            this.SendReceivepanel.Location = new System.Drawing.Point(3, 0);
-            this.SendReceivepanel.Name = "SendReceivepanel";
-            this.SendReceivepanel.Size = new System.Drawing.Size(557, 300);
-            this.SendReceivepanel.TabIndex = 0;
+            this.SendReceivePanel.Controls.Add(this.SendButton);
+            this.SendReceivePanel.Controls.Add(this.SendTextBox);
+            this.SendReceivePanel.Controls.Add(this.ReceiveTextBox);
+            this.SendReceivePanel.Location = new System.Drawing.Point(3, 0);
+            this.SendReceivePanel.Name = "SendReceivePanel";
+            this.SendReceivePanel.Size = new System.Drawing.Size(557, 300);
+            this.SendReceivePanel.TabIndex = 0;
             // 
-            // button4
+            // SendButton
             // 
-            this.button4.Location = new System.Drawing.Point(488, 147);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(60, 114);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.SendButton.Location = new System.Drawing.Point(488, 147);
+            this.SendButton.Name = "SendButton";
+            this.SendButton.Size = new System.Drawing.Size(60, 114);
+            this.SendButton.TabIndex = 2;
+            this.SendButton.Text = "button4";
+            this.SendButton.UseVisualStyleBackColor = true;
+            this.SendButton.Click += new System.EventHandler(this.button4_Click);
             // 
             // SendTextBox
             // 
@@ -173,16 +174,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 358);
-            this.Controls.Add(this.Mainpanel);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.MainPanel);
+            this.Controls.Add(this.MenuStrip);
+            this.MainMenuStrip = this.MenuStrip;
             this.Name = "Form1";
             this.Text = "Windows App";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.SendReceivepanel.ResumeLayout(false);
-            this.SendReceivepanel.PerformLayout();
+            this.MenuStrip.ResumeLayout(false);
+            this.MenuStrip.PerformLayout();
+            this.MainPanel.ResumeLayout(false);
+            this.SendReceivePanel.ResumeLayout(false);
+            this.SendReceivePanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,7 +192,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip MenuStrip;
         private System.Windows.Forms.ToolStripMenuItem 基本设置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cOM口设置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cAN信息设置ToolStripMenuItem;
@@ -199,9 +201,9 @@
         private System.Windows.Forms.ToolStripMenuItem cAN原始数据显示ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cAN信号仪表盘ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cAN信号曲线ToolStripMenuItem;
-        private System.Windows.Forms.Panel Mainpanel;
-        private System.Windows.Forms.Panel SendReceivepanel;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.Panel SendReceivePanel;
+        private System.Windows.Forms.Button SendButton;
         private System.Windows.Forms.TextBox SendTextBox;
         private System.Windows.Forms.TextBox ReceiveTextBox;
         private System.IO.Ports.SerialPort sPort;

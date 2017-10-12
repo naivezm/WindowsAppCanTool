@@ -26,15 +26,15 @@ namespace WindowsCanToolApp
 
         private void cAN信息设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Mainpanel.Controls.Clear();
+            this.MainPanel.Controls.Clear();
             
         }
 
         private void cOM口设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Mainpanel.Controls.Clear();
+            this.MainPanel.Controls.Clear();
             ComSetting cs = new ComSetting();
-            this.Mainpanel.Controls.Add(cs.COMpanel);
+            this.MainPanel.Controls.Add(cs.COMPanel);
             cs.GetCOMList();
         }
 
@@ -60,7 +60,7 @@ namespace WindowsCanToolApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Mainpanel.Controls.Clear();
+            this.MainPanel.Controls.Clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,8 +70,8 @@ namespace WindowsCanToolApp
 
         private void cAN信息发送ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Mainpanel.Controls.Clear();
-            this.Mainpanel.Controls.Add(this.SendReceivepanel);
+            this.MainPanel.Controls.Clear();
+            this.MainPanel.Controls.Add(this.SendReceivePanel);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -125,7 +125,11 @@ namespace WindowsCanToolApp
                  ReceiveTextBox.AppendText(content);
              }));
          }
-      
+
+        private void Mainpanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
     
 }
