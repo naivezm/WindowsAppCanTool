@@ -32,25 +32,25 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.COMSettingsgroupBox = new System.Windows.Forms.GroupBox();
             this.StopBitscomboBox = new System.Windows.Forms.ComboBox();
             this.DataBitscomboBox = new System.Windows.Forms.ComboBox();
             this.ParityErrorCharcomboBox = new System.Windows.Forms.ComboBox();
             this.ParitycomboBox = new System.Windows.Forms.ComboBox();
             this.BaudRatecomboBox = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.StopBitslabel = new System.Windows.Forms.Label();
+            this.DataBitslabel = new System.Windows.Forms.Label();
+            this.ParityErrorCharlabel = new System.Windows.Forms.Label();
+            this.Paritylabel = new System.Windows.Forms.Label();
+            this.BaudRatelabel = new System.Windows.Forms.Label();
+            this.COMSelectgroupBox = new System.Windows.Forms.GroupBox();
             this.Explainlabel2 = new System.Windows.Forms.Label();
             this.Explainlabel1 = new System.Windows.Forms.Label();
             this.COMcomboBox = new System.Windows.Forms.ComboBox();
             this.SendAndRecvlabel = new System.Windows.Forms.Label();
             this.COMpanel.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.COMSettingsgroupBox.SuspendLayout();
+            this.COMSelectgroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // COMpanel
@@ -58,8 +58,8 @@
             this.COMpanel.Controls.Add(this.button3);
             this.COMpanel.Controls.Add(this.button2);
             this.COMpanel.Controls.Add(this.button1);
-            this.COMpanel.Controls.Add(this.groupBox2);
-            this.COMpanel.Controls.Add(this.groupBox1);
+            this.COMpanel.Controls.Add(this.COMSettingsgroupBox);
+            this.COMpanel.Controls.Add(this.COMSelectgroupBox);
             this.COMpanel.Location = new System.Drawing.Point(0, -5);
             this.COMpanel.Name = "COMpanel";
             this.COMpanel.Size = new System.Drawing.Size(545, 355);
@@ -92,24 +92,24 @@
             this.button1.Text = "Ok";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // COMSettingsgroupBox
             // 
-            this.groupBox2.Controls.Add(this.StopBitscomboBox);
-            this.groupBox2.Controls.Add(this.DataBitscomboBox);
-            this.groupBox2.Controls.Add(this.ParityErrorCharcomboBox);
-            this.groupBox2.Controls.Add(this.ParitycomboBox);
-            this.groupBox2.Controls.Add(this.BaudRatecomboBox);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(3, 114);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(536, 181);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "COM port Settings.";
+            this.COMSettingsgroupBox.Controls.Add(this.StopBitscomboBox);
+            this.COMSettingsgroupBox.Controls.Add(this.DataBitscomboBox);
+            this.COMSettingsgroupBox.Controls.Add(this.ParityErrorCharcomboBox);
+            this.COMSettingsgroupBox.Controls.Add(this.ParitycomboBox);
+            this.COMSettingsgroupBox.Controls.Add(this.BaudRatecomboBox);
+            this.COMSettingsgroupBox.Controls.Add(this.StopBitslabel);
+            this.COMSettingsgroupBox.Controls.Add(this.DataBitslabel);
+            this.COMSettingsgroupBox.Controls.Add(this.ParityErrorCharlabel);
+            this.COMSettingsgroupBox.Controls.Add(this.Paritylabel);
+            this.COMSettingsgroupBox.Controls.Add(this.BaudRatelabel);
+            this.COMSettingsgroupBox.Location = new System.Drawing.Point(3, 114);
+            this.COMSettingsgroupBox.Name = "COMSettingsgroupBox";
+            this.COMSettingsgroupBox.Size = new System.Drawing.Size(536, 181);
+            this.COMSettingsgroupBox.TabIndex = 1;
+            this.COMSettingsgroupBox.TabStop = false;
+            this.COMSettingsgroupBox.Text = "COM port Settings.";
             // 
             // StopBitscomboBox
             // 
@@ -177,62 +177,62 @@
             this.BaudRatecomboBox.Size = new System.Drawing.Size(121, 20);
             this.BaudRatecomboBox.TabIndex = 5;
             // 
-            // label7
+            // StopBitslabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(314, 75);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 12);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Stop Bits";
+            this.StopBitslabel.AutoSize = true;
+            this.StopBitslabel.Location = new System.Drawing.Point(314, 75);
+            this.StopBitslabel.Name = "StopBitslabel";
+            this.StopBitslabel.Size = new System.Drawing.Size(59, 12);
+            this.StopBitslabel.TabIndex = 4;
+            this.StopBitslabel.Text = "Stop Bits";
             // 
-            // label6
+            // DataBitslabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(314, 39);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 12);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Data Bits";
+            this.DataBitslabel.AutoSize = true;
+            this.DataBitslabel.Location = new System.Drawing.Point(314, 39);
+            this.DataBitslabel.Name = "DataBitslabel";
+            this.DataBitslabel.Size = new System.Drawing.Size(59, 12);
+            this.DataBitslabel.TabIndex = 3;
+            this.DataBitslabel.Text = "Data Bits";
             // 
-            // label5
+            // ParityErrorCharlabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 115);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 12);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Parity Error Char.";
+            this.ParityErrorCharlabel.AutoSize = true;
+            this.ParityErrorCharlabel.Location = new System.Drawing.Point(22, 115);
+            this.ParityErrorCharlabel.Name = "ParityErrorCharlabel";
+            this.ParityErrorCharlabel.Size = new System.Drawing.Size(113, 12);
+            this.ParityErrorCharlabel.TabIndex = 2;
+            this.ParityErrorCharlabel.Text = "Parity Error Char.";
             // 
-            // label4
+            // Paritylabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 75);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 12);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Parity";
+            this.Paritylabel.AutoSize = true;
+            this.Paritylabel.Location = new System.Drawing.Point(22, 75);
+            this.Paritylabel.Name = "Paritylabel";
+            this.Paritylabel.Size = new System.Drawing.Size(41, 12);
+            this.Paritylabel.TabIndex = 1;
+            this.Paritylabel.Text = "Parity";
             // 
-            // label3
+            // BaudRatelabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 39);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 12);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Baud Rate";
+            this.BaudRatelabel.AutoSize = true;
+            this.BaudRatelabel.Location = new System.Drawing.Point(22, 39);
+            this.BaudRatelabel.Name = "BaudRatelabel";
+            this.BaudRatelabel.Size = new System.Drawing.Size(59, 12);
+            this.BaudRatelabel.TabIndex = 0;
+            this.BaudRatelabel.Text = "Baud Rate";
             // 
-            // groupBox1
+            // COMSelectgroupBox
             // 
-            this.groupBox1.Controls.Add(this.Explainlabel2);
-            this.groupBox1.Controls.Add(this.Explainlabel1);
-            this.groupBox1.Controls.Add(this.COMcomboBox);
-            this.groupBox1.Controls.Add(this.SendAndRecvlabel);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(536, 105);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
+            this.COMSelectgroupBox.Controls.Add(this.Explainlabel2);
+            this.COMSelectgroupBox.Controls.Add(this.Explainlabel1);
+            this.COMSelectgroupBox.Controls.Add(this.COMcomboBox);
+            this.COMSelectgroupBox.Controls.Add(this.SendAndRecvlabel);
+            this.COMSelectgroupBox.Location = new System.Drawing.Point(3, 3);
+            this.COMSelectgroupBox.Name = "COMSelectgroupBox";
+            this.COMSelectgroupBox.Size = new System.Drawing.Size(536, 105);
+            this.COMSelectgroupBox.TabIndex = 0;
+            this.COMSelectgroupBox.TabStop = false;
             // 
             // Explainlabel2
             // 
@@ -278,10 +278,10 @@
             this.Name = "ComSetting";
             this.Size = new System.Drawing.Size(648, 353);
             this.COMpanel.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.COMSettingsgroupBox.ResumeLayout(false);
+            this.COMSettingsgroupBox.PerformLayout();
+            this.COMSelectgroupBox.ResumeLayout(false);
+            this.COMSelectgroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -292,18 +292,18 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox COMSettingsgroupBox;
         private System.Windows.Forms.ComboBox StopBitscomboBox;
         private System.Windows.Forms.ComboBox DataBitscomboBox;
         private System.Windows.Forms.ComboBox ParityErrorCharcomboBox;
         private System.Windows.Forms.ComboBox ParitycomboBox;
         private System.Windows.Forms.ComboBox BaudRatecomboBox;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label StopBitslabel;
+        private System.Windows.Forms.Label DataBitslabel;
+        private System.Windows.Forms.Label ParityErrorCharlabel;
+        private System.Windows.Forms.Label Paritylabel;
+        private System.Windows.Forms.Label BaudRatelabel;
+        private System.Windows.Forms.GroupBox COMSelectgroupBox;
         private System.Windows.Forms.Label Explainlabel2;
         private System.Windows.Forms.Label Explainlabel1;
         private System.Windows.Forms.ComboBox COMcomboBox;
