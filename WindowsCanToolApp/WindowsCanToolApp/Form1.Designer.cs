@@ -126,6 +126,7 @@
             this.Mainpanel.Name = "Mainpanel";
             this.Mainpanel.Size = new System.Drawing.Size(563, 332);
             this.Mainpanel.TabIndex = 1;
+            this.Mainpanel.Controls.Add(SendReceivepanel);
            // this.Mainpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.Mainpanel_Paint);
             // 
             // SendReceivepanel
