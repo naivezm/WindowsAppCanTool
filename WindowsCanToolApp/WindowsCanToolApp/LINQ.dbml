@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CANTool" Class="LINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=CANTool;Integrated Security=True" SettingsObjectName="WindowsCanToolApp.Properties.Settings" SettingsPropertyName="CANToolConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ReceiveMessage" Member="ReceiveMessage">
+    <Type Name="ReceiveMessage">
+      <Column Name="BO_" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Message_Name" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Separator" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="DLC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Node_Name" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Association Name="ReceiveMessage_ReceiveSignal" Member="ReceiveSignal" ThisKey="ID" OtherKey="ID" Type="ReceiveSignal" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ReceiveSignal" Member="ReceiveSignal">
+    <Type Name="ReceiveSignal">
+      <Column Name="SG_" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Signal_Name" Type="System.String" DbType="VarChar(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Separator" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Bit_Format" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="[(A,B)]" Member="_A_B_" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[C|D]" Member="C_D" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Physical_Unit" Type="System.String" DbType="Char(32)" CanBeNull="true" />
+      <Column Name="Node_Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ReceiveMessage_ReceiveSignal" Member="ReceiveMessage" ThisKey="ID" OtherKey="ID" Type="ReceiveMessage" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SendMessage" Member="SendMessage">
+    <Type Name="SendMessage">
+      <Column Name="BO_" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Message_Name" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Separator" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="DLC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Node_Name" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Association Name="SendMessage_SendSignal" Member="SendSignal" ThisKey="ID" OtherKey="ID" Type="SendSignal" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SendSignal" Member="SendSignal">
+    <Type Name="SendSignal">
+      <Column Name="SG_" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Signal_Name" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Separator" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Bit_Format" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="[(A,B)]" Member="_A_B_" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[C|D]" Member="C_D" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Physical_Unit" Type="System.String" DbType="Char(32)" CanBeNull="true" />
+      <Column Name="Node_Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SendMessage_SendSignal" Member="SendMessage" ThisKey="ID" OtherKey="ID" Type="SendMessage" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

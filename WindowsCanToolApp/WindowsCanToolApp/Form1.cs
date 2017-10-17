@@ -26,15 +26,15 @@ namespace WindowsCanToolApp
 
         private void cAN信息设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Mainpanel.Controls.Clear();
+            this.MainPanel.Controls.Clear();
             
         }
 
         private void cOM口设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Mainpanel.Controls.Clear();
+            this.MainPanel.Controls.Clear();
             ComSetting cs = new ComSetting();
-            this.Mainpanel.Controls.Add(cs.COMpanel);
+            this.MainPanel.Controls.Add(cs.COMpanel);
             cs.GetCOMList();
         }
 
@@ -45,10 +45,23 @@ namespace WindowsCanToolApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            sPort.PortName = "COM2";
-            sPort.Open();
-            sPort.DataReceived += new SerialDataReceivedEventHandler(sPort_DataReceived);
-            //将事件处理函数，挂接到事件DataReceived 中
+            SerialPort.PortName = "COM2";
+            SerialPort.Open();
+            SerialPort.DataReceived += new SerialDataReceivedEventHandler(sPort_DataReceived);
+            LINQDataContext context = new LINQDataContext();
+            var query = from sm in context.SendMessage
+                        select sm ;
+            foreach (var item in query)
+            {
+                SendTextBox.AppendText(item.BO_.ToString()); 
+                SendTextBox.AppendText(item.ID.ToString());
+                SendTextBox.AppendText(item.Message_Name.ToString());
+                SendTextBox.AppendText(item.Separator.ToString());
+                SendTextBox.AppendText(item.DLC.ToString());
+                SendTextBox.AppendText(item.Node_Name.ToString());
+                SendTextBox.AppendText("\r\n");
+               
+            }
            
         }
 
@@ -60,7 +73,7 @@ namespace WindowsCanToolApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Mainpanel.Controls.Clear();
+            this.MainPanel.Controls.Clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,21 +83,22 @@ namespace WindowsCanToolApp
 
         private void cAN信息发送ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Mainpanel.Controls.Clear();
-            this.Mainpanel.Controls.Add(this.SendReceivepanel);
+            this.MainPanel.Controls.Clear();
+            this.MainPanel.Controls.Add(this.SendReceivepanel);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             try
             {
-
+               
+                //将事件处理函数，挂接到事件DataReceived 中
                 //byte[] data = Encoding.Unicode.GetBytes(textBox1.Text);
                 string data = SendTextBox.Text.ToString();
                 // string str = Convert.ToBase64String(data);
-                sPort.WriteLine(data);
+                SerialPort.WriteLine(data);
                 // sPort.Close();
-                MessageBox.Show("数据发送成功！", "系统提示");
+              
 
             }
             catch (Exception ex)
@@ -96,8 +110,8 @@ namespace WindowsCanToolApp
 
         private void sPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            byte[] ReDatas = new byte[sPort.BytesToRead];
-            sPort.Read(ReDatas, 0, ReDatas.Length);//读取数据
+            byte[] ReDatas = new byte[SerialPort.BytesToRead];
+            SerialPort.Read(ReDatas, 0, ReDatas.Length);//读取数据
             this.AddData(ReDatas);//输出数据
         }
          /// <summary>
@@ -124,6 +138,12 @@ namespace WindowsCanToolApp
                  }
                  ReceiveTextBox.AppendText(content);
              }));
+         }
+
+         private void SendTextBox_TextChanged(object sender, EventArgs e)
+         {
+            
+
          }
       
     }
