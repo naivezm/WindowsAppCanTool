@@ -39,14 +39,22 @@
             this.cAN信号曲线ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cAN信息发送ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainPanel = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
             this.SendReceivepanel = new System.Windows.Forms.Panel();
+=======
+            this.SendReceivePanel = new System.Windows.Forms.Panel();
+>>>>>>> f4d1569903088494afaf64ffef9933bd9aaa197f
             this.SendButton = new System.Windows.Forms.Button();
             this.SendTextBox = new System.Windows.Forms.TextBox();
             this.ReceiveTextBox = new System.Windows.Forms.TextBox();
             this.SerialPort = new System.IO.Ports.SerialPort(this.components);
             this.MenuStrip.SuspendLayout();
             this.MainPanel.SuspendLayout();
+<<<<<<< HEAD
             this.SendReceivepanel.SuspendLayout();
+=======
+            this.SendReceivePanel.SuspendLayout();
+>>>>>>> f4d1569903088494afaf64ffef9933bd9aaa197f
             this.SuspendLayout();
             // 
             // MenuStrip
@@ -74,14 +82,14 @@
             // cOM口设置ToolStripMenuItem
             // 
             this.cOM口设置ToolStripMenuItem.Name = "cOM口设置ToolStripMenuItem";
-            this.cOM口设置ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.cOM口设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cOM口设置ToolStripMenuItem.Text = "COM口设置";
             this.cOM口设置ToolStripMenuItem.Click += new System.EventHandler(this.cOM口设置ToolStripMenuItem_Click);
             // 
             // cAN信息设置ToolStripMenuItem
             // 
             this.cAN信息设置ToolStripMenuItem.Name = "cAN信息设置ToolStripMenuItem";
-            this.cAN信息设置ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.cAN信息设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cAN信息设置ToolStripMenuItem.Text = "CAN信息设置";
             this.cAN信息设置ToolStripMenuItem.Click += new System.EventHandler(this.cAN信息设置ToolStripMenuItem_Click);
             // 
@@ -120,8 +128,9 @@
             this.cAN信息发送ToolStripMenuItem.Text = "CAN信息发送";
             this.cAN信息发送ToolStripMenuItem.Click += new System.EventHandler(this.cAN信息发送ToolStripMenuItem_Click);
             // 
-            // Mainpanel
+            // MainPanel
             // 
+<<<<<<< HEAD
            // this.MainPanel.Controls.Add(this.SendReceivepanel);
             this.MainPanel.Location = new System.Drawing.Point(0, 29);
             this.MainPanel.Name = "Mainpanel";
@@ -137,6 +146,33 @@
             this.SendReceivepanel.Name = "SendReceivepanel";
             this.SendReceivepanel.Size = new System.Drawing.Size(557, 300);
             this.SendReceivepanel.TabIndex = 0;
+=======
+<<<<<<< HEAD
+            this.Mainpanel.Location = new System.Drawing.Point(0, 29);
+            this.Mainpanel.Name = "Mainpanel";
+            this.Mainpanel.Size = new System.Drawing.Size(563, 332);
+            this.Mainpanel.TabIndex = 1;
+            this.Mainpanel.Controls.Add(SendReceivepanel);
+           // this.Mainpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.Mainpanel_Paint);
+=======
+            //this.MainPanel.Controls.Add(this.SendReceivePanel);
+            this.MainPanel.Location = new System.Drawing.Point(0, 29);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(563, 332);
+            this.MainPanel.TabIndex = 1;
+            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.Mainpanel_Paint);
+>>>>>>> 6c00fe8b22e9c215600f71a80e984e18432b6821
+            // 
+            // SendReceivePanel
+            // 
+            this.SendReceivePanel.Controls.Add(this.SendButton);
+            this.SendReceivePanel.Controls.Add(this.SendTextBox);
+            this.SendReceivePanel.Controls.Add(this.ReceiveTextBox);
+            this.SendReceivePanel.Location = new System.Drawing.Point(3, 0);
+            this.SendReceivePanel.Name = "SendReceivePanel";
+            this.SendReceivePanel.Size = new System.Drawing.Size(557, 300);
+            this.SendReceivePanel.TabIndex = 0;
+>>>>>>> f4d1569903088494afaf64ffef9933bd9aaa197f
             // 
             // SendButton
             // 
@@ -144,7 +180,11 @@
             this.SendButton.Name = "SendButton";
             this.SendButton.Size = new System.Drawing.Size(60, 114);
             this.SendButton.TabIndex = 2;
+<<<<<<< HEAD
             this.SendButton.Text = "Send";
+=======
+            this.SendButton.Text = "button4";
+>>>>>>> f4d1569903088494afaf64ffef9933bd9aaa197f
             this.SendButton.UseVisualStyleBackColor = true;
             this.SendButton.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -183,8 +223,13 @@
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
             this.MainPanel.ResumeLayout(false);
+<<<<<<< HEAD
             this.SendReceivepanel.ResumeLayout(false);
             this.SendReceivepanel.PerformLayout();
+=======
+            this.SendReceivePanel.ResumeLayout(false);
+            this.SendReceivePanel.PerformLayout();
+>>>>>>> f4d1569903088494afaf64ffef9933bd9aaa197f
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,7 +247,11 @@
         private System.Windows.Forms.ToolStripMenuItem cAN信号仪表盘ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cAN信号曲线ToolStripMenuItem;
         private System.Windows.Forms.Panel MainPanel;
+<<<<<<< HEAD
         private System.Windows.Forms.Panel SendReceivepanel;
+=======
+        private System.Windows.Forms.Panel SendReceivePanel;
+>>>>>>> f4d1569903088494afaf64ffef9933bd9aaa197f
         private System.Windows.Forms.Button SendButton;
         private System.Windows.Forms.TextBox SendTextBox;
         private System.Windows.Forms.TextBox ReceiveTextBox;
