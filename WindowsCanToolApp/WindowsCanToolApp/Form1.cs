@@ -27,7 +27,7 @@ namespace WindowsCanToolApp
         private void cAN信息设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.MainPanel.Controls.Clear();
-            
+
         }
 
         private void cOM口设置ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,32 +49,40 @@ namespace WindowsCanToolApp
             SerialPort.PortName = "COM2";
             SerialPort.Open();
             SerialPort.DataReceived += new SerialDataReceivedEventHandler(SerialPort_DataReceived);
+            //将事件处理函数，挂接到事件DataReceived 中
 
             LINQDataContext context = new LINQDataContext();
             var query = from sm in context.SendMessage
-                        select sm ;
+                        select sm;
             foreach (var item in query)
             {
-                SendTextBox.AppendText(item.BO_.ToString()); 
+
+                SendTextBox.AppendText(item.BO_.ToString());
                 SendTextBox.AppendText(item.ID.ToString());
                 SendTextBox.AppendText(item.Message_Name.ToString());
                 SendTextBox.AppendText(item.Separator.ToString());
                 SendTextBox.AppendText(item.DLC.ToString());
                 SendTextBox.AppendText(item.Node_Name.ToString());
                 SendTextBox.AppendText("\r\n");
-               
+                TreeNode tn = TreeView.Nodes.Add(item.BO_.ToString().Trim() + item.ID.ToString().Trim());
+                var query1 = from sg in context.SendSignal
+                             where sg.ID == item.ID
+                             select sg;
+                foreach (var item1 in query1)
+                {
+                    TreeNode tn1 = new TreeNode(item1.SG_.ToString().Trim() + item1.Signal_Name.ToString().Trim());
+                    tn.Nodes.Add(tn1);
+                }
             }
 
-            //将事件处理函数，挂接到事件DataReceived 中
-
-           
         }
 
-       
+
+
         /// <summary>
         /// 
         /// </summary>
-      
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -83,7 +91,7 @@ namespace WindowsCanToolApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cAN信息发送ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,14 +105,14 @@ namespace WindowsCanToolApp
         {
             try
             {
-               
-                //将事件处理函数，挂接到事件DataReceived 中
+
+
                 //byte[] data = Encoding.Unicode.GetBytes(textBox1.Text);
                 string data = SendTextBox.Text.ToString();
                 // string str = Convert.ToBase64String(data);
                 SerialPort.WriteLine(data);
                 // sPort.Close();
-              
+
 
             }
             catch (Exception ex)
@@ -120,44 +128,37 @@ namespace WindowsCanToolApp
             SerialPort.Read(ReDatas, 0, ReDatas.Length);//读取数据
             this.AddData(ReDatas);//输出数据
         }
-         /// <summary>
-         /// 添加数据
-         /// </summary>
-         /// <param name="data">字节数组</param>
-         public void AddData(byte[] data)
+        /// <summary>
+        /// 添加数据
+        /// </summary>
+        /// <param name="data">字节数组</param>
+        public void AddData(byte[] data)
         {
             AddContent(new ASCIIEncoding().GetString(data));
-            
-         }
 
-         /// <summary>
-         /// 输入到显示区域
-         /// </summary>
+        }
+
+        /// <summary>
+        /// 输入到显示区域
+        /// </summary>
         /// <param name="content"></param>
-         private void AddContent(string content)
-         {
-             this.BeginInvoke(new MethodInvoker(delegate//在创建控件的基础句柄所在线程上异步执行指定委托。
-             {
-                 if(ReceiveTextBox.Text.Length>0)//存在内容
-                 {
-                     ReceiveTextBox.AppendText("\r\n");//换行
-                 }
-                 ReceiveTextBox.AppendText(content);
-             }));
-         }
+        private void AddContent(string content)
+        {
+            this.BeginInvoke(new MethodInvoker(delegate//在创建控件的基础句柄所在线程上异步执行指定委托。
+            {
+                if (ReceiveTextBox.Text.Length > 0)//存在内容
+                {
+                    ReceiveTextBox.AppendText("\r\n");//换行
+                }
+                ReceiveTextBox.AppendText(content);
+            }));
+        }
 
-
-         private void SendTextBox_TextChanged(object sender, EventArgs e)
-         {
-            
-
-         }
-      
-
-        private void MainPanel_Paint(object sender, PaintEventArgs e)
+        private void TreeView_MouseUp(object sender, MouseEventArgs e)
         {
 
         }
     }
-    
 }
+    
+

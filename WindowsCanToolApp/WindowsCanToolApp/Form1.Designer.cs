@@ -40,6 +40,7 @@
             this.cAN信息发送ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.SendReceivePanel = new System.Windows.Forms.Panel();
+            this.TreeView = new System.Windows.Forms.TreeView();
             this.SendButton = new System.Windows.Forms.Button();
             this.SendTextBox = new System.Windows.Forms.TextBox();
             this.ReceiveTextBox = new System.Windows.Forms.TextBox();
@@ -74,14 +75,14 @@
             // cOM口设置ToolStripMenuItem
             // 
             this.cOM口设置ToolStripMenuItem.Name = "cOM口设置ToolStripMenuItem";
-            this.cOM口设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cOM口设置ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.cOM口设置ToolStripMenuItem.Text = "COM口设置";
             this.cOM口设置ToolStripMenuItem.Click += new System.EventHandler(this.cOM口设置ToolStripMenuItem_Click);
             // 
             // cAN信息设置ToolStripMenuItem
             // 
             this.cAN信息设置ToolStripMenuItem.Name = "cAN信息设置ToolStripMenuItem";
-            this.cAN信息设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cAN信息设置ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.cAN信息设置ToolStripMenuItem.Text = "CAN信息设置";
             this.cAN信息设置ToolStripMenuItem.Click += new System.EventHandler(this.cAN信息设置ToolStripMenuItem_Click);
             // 
@@ -122,23 +123,15 @@
             // 
             // MainPanel
             // 
-           // this.MainPanel.Controls.Add(this.SendReceivepanel);
-            this.MainPanel.Location = new System.Drawing.Point(0, 29);
-            this.MainPanel.Name = "Mainpanel";
-            this.MainPanel.Size = new System.Drawing.Size(563, 332);
-            this.MainPanel.TabIndex = 1;
-            
-
-            //this.MainPanel.Controls.Add(this.SendReceivePanel);
+            this.MainPanel.Controls.Add(this.SendReceivePanel);
             this.MainPanel.Location = new System.Drawing.Point(0, 29);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(563, 332);
             this.MainPanel.TabIndex = 1;
-            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
-
             // 
             // SendReceivePanel
             // 
+            this.SendReceivePanel.Controls.Add(this.TreeView);
             this.SendReceivePanel.Controls.Add(this.SendButton);
             this.SendReceivePanel.Controls.Add(this.SendTextBox);
             this.SendReceivePanel.Controls.Add(this.ReceiveTextBox);
@@ -146,7 +139,14 @@
             this.SendReceivePanel.Name = "SendReceivePanel";
             this.SendReceivePanel.Size = new System.Drawing.Size(557, 300);
             this.SendReceivePanel.TabIndex = 0;
-
+            // 
+            // TreeView
+            // 
+            this.TreeView.Location = new System.Drawing.Point(3, 3);
+            this.TreeView.Name = "TreeView";
+            this.TreeView.Size = new System.Drawing.Size(206, 257);
+            this.TreeView.TabIndex = 3;
+            this.TreeView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TreeView_MouseUp);
             // 
             // SendButton
             // 
@@ -165,7 +165,6 @@
             this.SendTextBox.Name = "SendTextBox";
             this.SendTextBox.Size = new System.Drawing.Size(267, 114);
             this.SendTextBox.TabIndex = 1;
-            this.SendTextBox.TextChanged += new System.EventHandler(this.SendTextBox_TextChanged);
             // 
             // ReceiveTextBox
             // 
@@ -217,6 +216,7 @@
         private System.Windows.Forms.TextBox SendTextBox;
         private System.Windows.Forms.TextBox ReceiveTextBox;
         private System.IO.Ports.SerialPort SerialPort;
+        private System.Windows.Forms.TreeView TreeView;
     }
 }
 
