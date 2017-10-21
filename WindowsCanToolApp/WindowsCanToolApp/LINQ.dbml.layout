@@ -2,42 +2,23 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ">
   <DataContextMoniker Name="/LINQDataContext" />
   <nestedChildShapes>
-    <classShape Id="e922bfc3-0dcb-4b1a-84b8-cdddfabfa41e" absoluteBounds="2, 1.375, 2, 1.9068933105468751">
-      <DataClassMoniker Name="/LINQDataContext/ReceiveMessage" />
-      <nestedChildShapes>
-        <elementListCompartment Id="178c2bf4-400a-4bf4-8b6d-84b3ac110917" absoluteBounds="2.015, 1.835, 1.9700000000000002, 1.346893310546875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="c8b1c1ff-e956-4d35-bff0-b9b0b711ad47" absoluteBounds="4.375, 0.5, 2, 2.4612756347656251">
-      <DataClassMoniker Name="/LINQDataContext/ReceiveSignal" />
-      <nestedChildShapes>
-        <elementListCompartment Id="f770003a-5fc6-4f85-aae9-819e56a47d80" absoluteBounds="4.3900000000000006, 0.96, 1.9700000000000002, 1.901275634765625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(4 : 2.16813781738281); (4.375 : 2.16813781738281)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LINQDataContext/ReceiveMessage/ReceiveMessage_ReceiveSignal" />
-      <nodes>
-        <classShapeMoniker Id="e922bfc3-0dcb-4b1a-84b8-cdddfabfa41e" />
-        <classShapeMoniker Id="c8b1c1ff-e956-4d35-bff0-b9b0b711ad47" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="26310746-a490-4d63-ba71-b0a8d744926d" absoluteBounds="5.375, 1.875, 2, 1.9068933105468751">
+    <classShape Id="263b8aed-6ceb-4b22-99f5-75883b93fc5a" absoluteBounds="3.875, 0.875, 2, 1.9068933105468751">
       <DataClassMoniker Name="/LINQDataContext/SendMessage" />
       <nestedChildShapes>
-        <elementListCompartment Id="8f26e18a-5ccf-4670-8114-ba5d2c373fb1" absoluteBounds="5.39, 2.335, 1.9700000000000002, 1.346893310546875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="dd82b2b1-c727-4ee7-a332-89c7125c3619" absoluteBounds="3.89, 1.335, 1.9700000000000002, 1.346893310546875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e2855642-687d-4b23-8e53-87a0d740b4d3" absoluteBounds="0.5, 0.5, 2, 2.4612756347656251">
+    <classShape Id="45b491cf-1e74-4845-a66f-a84f79166790" absoluteBounds="1.125, 2, 2, 2.6460697428385416">
       <DataClassMoniker Name="/LINQDataContext/SendSignal" />
       <nestedChildShapes>
-        <elementListCompartment Id="abd4dc15-72dc-45c3-8169-7c54d5f760a1" absoluteBounds="0.515, 0.96, 1.9700000000000002, 1.901275634765625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9ddace79-260d-45a7-8fbe-741f8d3c4318" absoluteBounds="1.1400000000000001, 2.46, 1.9700000000000002, 2.0860697428385415" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.375 : 3.56314331054688); (1.21875 : 3.56314331054688); (1.21875 : 2.96127563476563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.875 : 2.39094665527344); (3.125 : 2.39094665527344)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LINQDataContext/SendMessage/SendMessage_SendSignal" />
       <nodes>
-        <classShapeMoniker Id="26310746-a490-4d63-ba71-b0a8d744926d" />
-        <classShapeMoniker Id="e2855642-687d-4b23-8e53-87a0d740b4d3" />
+        <classShapeMoniker Id="263b8aed-6ceb-4b22-99f5-75883b93fc5a" />
+        <classShapeMoniker Id="45b491cf-1e74-4845-a66f-a84f79166790" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

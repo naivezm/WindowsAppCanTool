@@ -30,15 +30,12 @@ namespace WindowsCanToolApp
 		
     #region 可扩展性方法定义
     partial void OnCreated();
-    partial void InsertReceiveMessage(ReceiveMessage instance);
-    partial void UpdateReceiveMessage(ReceiveMessage instance);
-    partial void DeleteReceiveMessage(ReceiveMessage instance);
-    partial void InsertReceiveSignal(ReceiveSignal instance);
-    partial void UpdateReceiveSignal(ReceiveSignal instance);
-    partial void DeleteReceiveSignal(ReceiveSignal instance);
     partial void InsertSendMessage(SendMessage instance);
     partial void UpdateSendMessage(SendMessage instance);
     partial void DeleteSendMessage(SendMessage instance);
+    partial void InsertSendSignal(SendSignal instance);
+    partial void UpdateSendSignal(SendSignal instance);
+    partial void DeleteSendSignal(SendSignal instance);
     #endregion
 		
 		public LINQDataContext() : 
@@ -71,22 +68,6 @@ namespace WindowsCanToolApp
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<ReceiveMessage> ReceiveMessage
-		{
-			get
-			{
-				return this.GetTable<ReceiveMessage>();
-			}
-		}
-		
-		public System.Data.Linq.Table<ReceiveSignal> ReceiveSignal
-		{
-			get
-			{
-				return this.GetTable<ReceiveSignal>();
-			}
-		}
-		
 		public System.Data.Linq.Table<SendMessage> SendMessage
 		{
 			get
@@ -104,8 +85,8 @@ namespace WindowsCanToolApp
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ReceiveMessage")]
-	public partial class ReceiveMessage : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SendMessage")]
+	public partial class SendMessage : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -116,13 +97,13 @@ namespace WindowsCanToolApp
 		
 		private string _Message_Name;
 		
-		private System.Nullable<char> _Separator;
+		private char _Separator;
 		
-		private System.Nullable<int> _DLC;
+		private int _DLC;
 		
 		private string _Node_Name;
 		
-		private EntitySet<ReceiveSignal> _ReceiveSignal;
+		private EntitySet<SendSignal> _SendSignal;
 		
     #region 可扩展性方法定义
     partial void OnLoaded();
@@ -134,21 +115,21 @@ namespace WindowsCanToolApp
     partial void OnIDChanged();
     partial void OnMessage_NameChanging(string value);
     partial void OnMessage_NameChanged();
-    partial void OnSeparatorChanging(System.Nullable<char> value);
+    partial void OnSeparatorChanging(char value);
     partial void OnSeparatorChanged();
-    partial void OnDLCChanging(System.Nullable<int> value);
+    partial void OnDLCChanging(int value);
     partial void OnDLCChanged();
     partial void OnNode_NameChanging(string value);
     partial void OnNode_NameChanged();
     #endregion
 		
-		public ReceiveMessage()
+		public SendMessage()
 		{
-			this._ReceiveSignal = new EntitySet<ReceiveSignal>(new Action<ReceiveSignal>(this.attach_ReceiveSignal), new Action<ReceiveSignal>(this.detach_ReceiveSignal));
+			this._SendSignal = new EntitySet<SendSignal>(new Action<SendSignal>(this.attach_SendSignal), new Action<SendSignal>(this.detach_SendSignal));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BO_", DbType="VarChar(32)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BO_", DbType="VarChar(32) NOT NULL", CanBeNull=false)]
 		public string BO_
 		{
 			get
@@ -188,7 +169,7 @@ namespace WindowsCanToolApp
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Message_Name", DbType="VarChar(32)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Message_Name", DbType="VarChar(32) NOT NULL", CanBeNull=false)]
 		public string Message_Name
 		{
 			get
@@ -208,8 +189,8 @@ namespace WindowsCanToolApp
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Separator", DbType="Char(1)")]
-		public System.Nullable<char> Separator
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Separator", DbType="Char(1) NOT NULL")]
+		public char Separator
 		{
 			get
 			{
@@ -228,8 +209,8 @@ namespace WindowsCanToolApp
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DLC", DbType="Int")]
-		public System.Nullable<int> DLC
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DLC", DbType="Int NOT NULL")]
+		public int DLC
 		{
 			get
 			{
@@ -248,7 +229,7 @@ namespace WindowsCanToolApp
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Node_Name", DbType="VarChar(32)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Node_Name", DbType="VarChar(32) NOT NULL", CanBeNull=false)]
 		public string Node_Name
 		{
 			get
@@ -268,16 +249,16 @@ namespace WindowsCanToolApp
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ReceiveMessage_ReceiveSignal", Storage="_ReceiveSignal", ThisKey="ID", OtherKey="ID")]
-		public EntitySet<ReceiveSignal> ReceiveSignal
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SendMessage_SendSignal", Storage="_SendSignal", ThisKey="ID", OtherKey="ID")]
+		public EntitySet<SendSignal> SendSignal
 		{
 			get
 			{
-				return this._ReceiveSignal;
+				return this._SendSignal;
 			}
 			set
 			{
-				this._ReceiveSignal.Assign(value);
+				this._SendSignal.Assign(value);
 			}
 		}
 		
@@ -301,21 +282,21 @@ namespace WindowsCanToolApp
 			}
 		}
 		
-		private void attach_ReceiveSignal(ReceiveSignal entity)
+		private void attach_SendSignal(SendSignal entity)
 		{
 			this.SendPropertyChanging();
-			entity.ReceiveMessage = this;
+			entity.SendMessage = this;
 		}
 		
-		private void detach_ReceiveSignal(ReceiveSignal entity)
+		private void detach_SendSignal(SendSignal entity)
 		{
 			this.SendPropertyChanging();
-			entity.ReceiveMessage = null;
+			entity.SendMessage = null;
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ReceiveSignal")]
-	public partial class ReceiveSignal : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SendSignal")]
+	public partial class SendSignal : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -324,7 +305,7 @@ namespace WindowsCanToolApp
 		
 		private string _Signal_Name;
 		
-		private System.Nullable<char> _Separator;
+		private char _Separator;
 		
 		private string _Bit_Format;
 		
@@ -336,9 +317,11 @@ namespace WindowsCanToolApp
 		
 		private string _Node_Name;
 		
-		private System.Nullable<int> _ID;
+		private string _Signal_Value;
 		
-		private EntityRef<ReceiveMessage> _ReceiveMessage;
+		private int _ID;
+		
+		private EntityRef<SendMessage> _SendMessage;
 		
     #region 可扩展性方法定义
     partial void OnLoaded();
@@ -348,7 +331,7 @@ namespace WindowsCanToolApp
     partial void OnSG_Changed();
     partial void OnSignal_NameChanging(string value);
     partial void OnSignal_NameChanged();
-    partial void OnSeparatorChanging(System.Nullable<char> value);
+    partial void OnSeparatorChanging(char value);
     partial void OnSeparatorChanged();
     partial void OnBit_FormatChanging(string value);
     partial void OnBit_FormatChanged();
@@ -360,17 +343,19 @@ namespace WindowsCanToolApp
     partial void OnPhysical_UnitChanged();
     partial void OnNode_NameChanging(string value);
     partial void OnNode_NameChanged();
-    partial void OnIDChanging(System.Nullable<int> value);
+    partial void OnSignal_ValueChanging(string value);
+    partial void OnSignal_ValueChanged();
+    partial void OnIDChanging(int value);
     partial void OnIDChanged();
     #endregion
 		
-		public ReceiveSignal()
+		public SendSignal()
 		{
-			this._ReceiveMessage = default(EntityRef<ReceiveMessage>);
+			this._SendMessage = default(EntityRef<SendMessage>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SG_", DbType="VarChar(32)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SG_", DbType="VarChar(32) NOT NULL", CanBeNull=false)]
 		public string SG_
 		{
 			get
@@ -410,8 +395,8 @@ namespace WindowsCanToolApp
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Separator", DbType="Char(1)")]
-		public System.Nullable<char> Separator
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Separator", DbType="Char(1) NOT NULL")]
+		public char Separator
 		{
 			get
 			{
@@ -430,7 +415,7 @@ namespace WindowsCanToolApp
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Bit_Format", DbType="VarChar(12)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Bit_Format", DbType="VarChar(12) NOT NULL", CanBeNull=false)]
 		public string Bit_Format
 		{
 			get
@@ -450,7 +435,7 @@ namespace WindowsCanToolApp
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[(A,B)]", Storage="__A_B_", DbType="VarChar(20)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[(A,B)]", Storage="__A_B_", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
 		public string _A_B_
 		{
 			get
@@ -470,7 +455,7 @@ namespace WindowsCanToolApp
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[C|D]", Storage="_C_D", DbType="VarChar(20)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[C|D]", Storage="_C_D", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
 		public string C_D
 		{
 			get
@@ -490,7 +475,7 @@ namespace WindowsCanToolApp
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Physical_Unit", DbType="Char(32)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Physical_Unit", DbType="Char(32) NOT NULL", CanBeNull=false)]
 		public string Physical_Unit
 		{
 			get
@@ -510,7 +495,7 @@ namespace WindowsCanToolApp
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Node_Name", DbType="VarChar(255)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Node_Name", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
 		public string Node_Name
 		{
 			get
@@ -530,8 +515,28 @@ namespace WindowsCanToolApp
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int")]
-		public System.Nullable<int> ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Signal_Value", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string Signal_Value
+		{
+			get
+			{
+				return this._Signal_Value;
+			}
+			set
+			{
+				if ((this._Signal_Value != value))
+				{
+					this.OnSignal_ValueChanging(value);
+					this.SendPropertyChanging();
+					this._Signal_Value = value;
+					this.SendPropertyChanged("Signal_Value");
+					this.OnSignal_ValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
 		{
 			get
 			{
@@ -541,7 +546,7 @@ namespace WindowsCanToolApp
 			{
 				if ((this._ID != value))
 				{
-					if (this._ReceiveMessage.HasLoadedOrAssignedValue)
+					if (this._SendMessage.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -554,36 +559,36 @@ namespace WindowsCanToolApp
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ReceiveMessage_ReceiveSignal", Storage="_ReceiveMessage", ThisKey="ID", OtherKey="ID", IsForeignKey=true)]
-		public ReceiveMessage ReceiveMessage
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SendMessage_SendSignal", Storage="_SendMessage", ThisKey="ID", OtherKey="ID", IsForeignKey=true)]
+		public SendMessage SendMessage
 		{
 			get
 			{
-				return this._ReceiveMessage.Entity;
+				return this._SendMessage.Entity;
 			}
 			set
 			{
-				ReceiveMessage previousValue = this._ReceiveMessage.Entity;
+				SendMessage previousValue = this._SendMessage.Entity;
 				if (((previousValue != value) 
-							|| (this._ReceiveMessage.HasLoadedOrAssignedValue == false)))
+							|| (this._SendMessage.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._ReceiveMessage.Entity = null;
-						previousValue.ReceiveSignal.Remove(this);
+						this._SendMessage.Entity = null;
+						previousValue.SendSignal.Remove(this);
 					}
-					this._ReceiveMessage.Entity = value;
+					this._SendMessage.Entity = value;
 					if ((value != null))
 					{
-						value.ReceiveSignal.Add(this);
+						value.SendSignal.Add(this);
 						this._ID = value.ID;
 					}
 					else
 					{
-						this._ID = default(Nullable<int>);
+						this._ID = default(int);
 					}
-					this.SendPropertyChanged("ReceiveMessage");
+					this.SendPropertyChanged("SendMessage");
 				}
 			}
 		}
@@ -605,359 +610,6 @@ namespace WindowsCanToolApp
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SendMessage")]
-	public partial class SendMessage : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _BO_;
-		
-		private int _ID;
-		
-		private string _Message_Name;
-		
-		private System.Nullable<char> _Separator;
-		
-		private System.Nullable<int> _DLC;
-		
-		private string _Node_Name;
-		
-    #region 可扩展性方法定义
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnBO_Changing(string value);
-    partial void OnBO_Changed();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnMessage_NameChanging(string value);
-    partial void OnMessage_NameChanged();
-    partial void OnSeparatorChanging(System.Nullable<char> value);
-    partial void OnSeparatorChanged();
-    partial void OnDLCChanging(System.Nullable<int> value);
-    partial void OnDLCChanged();
-    partial void OnNode_NameChanging(string value);
-    partial void OnNode_NameChanged();
-    #endregion
-		
-		public SendMessage()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BO_", DbType="VarChar(32)")]
-		public string BO_
-		{
-			get
-			{
-				return this._BO_;
-			}
-			set
-			{
-				if ((this._BO_ != value))
-				{
-					this.OnBO_Changing(value);
-					this.SendPropertyChanging();
-					this._BO_ = value;
-					this.SendPropertyChanged("BO_");
-					this.OnBO_Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Message_Name", DbType="VarChar(32)")]
-		public string Message_Name
-		{
-			get
-			{
-				return this._Message_Name;
-			}
-			set
-			{
-				if ((this._Message_Name != value))
-				{
-					this.OnMessage_NameChanging(value);
-					this.SendPropertyChanging();
-					this._Message_Name = value;
-					this.SendPropertyChanged("Message_Name");
-					this.OnMessage_NameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Separator", DbType="Char(1)")]
-		public System.Nullable<char> Separator
-		{
-			get
-			{
-				return this._Separator;
-			}
-			set
-			{
-				if ((this._Separator != value))
-				{
-					this.OnSeparatorChanging(value);
-					this.SendPropertyChanging();
-					this._Separator = value;
-					this.SendPropertyChanged("Separator");
-					this.OnSeparatorChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DLC", DbType="Int")]
-		public System.Nullable<int> DLC
-		{
-			get
-			{
-				return this._DLC;
-			}
-			set
-			{
-				if ((this._DLC != value))
-				{
-					this.OnDLCChanging(value);
-					this.SendPropertyChanging();
-					this._DLC = value;
-					this.SendPropertyChanged("DLC");
-					this.OnDLCChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Node_Name", DbType="VarChar(32)")]
-		public string Node_Name
-		{
-			get
-			{
-				return this._Node_Name;
-			}
-			set
-			{
-				if ((this._Node_Name != value))
-				{
-					this.OnNode_NameChanging(value);
-					this.SendPropertyChanging();
-					this._Node_Name = value;
-					this.SendPropertyChanged("Node_Name");
-					this.OnNode_NameChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SendSignal")]
-	public partial class SendSignal
-	{
-		
-		private string _SG_;
-		
-		private string _Signal_Name;
-		
-		private System.Nullable<char> _Separator;
-		
-		private string _Bit_Format;
-		
-		private string @__A_B_;
-		
-		private string _C_D;
-		
-		private string _Physical_Unit;
-		
-		private string _Node_Name;
-		
-		private System.Nullable<int> _ID;
-		
-		public SendSignal()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SG_", DbType="VarChar(32)")]
-		public string SG_
-		{
-			get
-			{
-				return this._SG_;
-			}
-			set
-			{
-				if ((this._SG_ != value))
-				{
-					this._SG_ = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Signal_Name", DbType="VarChar(32)")]
-		public string Signal_Name
-		{
-			get
-			{
-				return this._Signal_Name;
-			}
-			set
-			{
-				if ((this._Signal_Name != value))
-				{
-					this._Signal_Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Separator", DbType="Char(1)")]
-		public System.Nullable<char> Separator
-		{
-			get
-			{
-				return this._Separator;
-			}
-			set
-			{
-				if ((this._Separator != value))
-				{
-					this._Separator = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Bit_Format", DbType="VarChar(12)")]
-		public string Bit_Format
-		{
-			get
-			{
-				return this._Bit_Format;
-			}
-			set
-			{
-				if ((this._Bit_Format != value))
-				{
-					this._Bit_Format = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[(A,B)]", Storage="__A_B_", DbType="VarChar(20)")]
-		public string _A_B_
-		{
-			get
-			{
-				return this.@__A_B_;
-			}
-			set
-			{
-				if ((this.@__A_B_ != value))
-				{
-					this.@__A_B_ = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[C|D]", Storage="_C_D", DbType="VarChar(20)")]
-		public string C_D
-		{
-			get
-			{
-				return this._C_D;
-			}
-			set
-			{
-				if ((this._C_D != value))
-				{
-					this._C_D = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Physical_Unit", DbType="Char(32)")]
-		public string Physical_Unit
-		{
-			get
-			{
-				return this._Physical_Unit;
-			}
-			set
-			{
-				if ((this._Physical_Unit != value))
-				{
-					this._Physical_Unit = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Node_Name", DbType="VarChar(255)")]
-		public string Node_Name
-		{
-			get
-			{
-				return this._Node_Name;
-			}
-			set
-			{
-				if ((this._Node_Name != value))
-				{
-					this._Node_Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int")]
-		public System.Nullable<int> ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
 			}
 		}
 	}
