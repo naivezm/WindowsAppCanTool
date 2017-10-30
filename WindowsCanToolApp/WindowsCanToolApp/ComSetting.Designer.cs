@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.COMPanel = new System.Windows.Forms.Panel();
-            this.HelpButton = new System.Windows.Forms.Button();
-            this.CancelButton = new System.Windows.Forms.Button();
-            this.SaveButton = new System.Windows.Forms.Button();
+            this.CloseButton = new System.Windows.Forms.Button();
+            this.OpenButton = new System.Windows.Forms.Button();
             this.COMSettingsGroupBox = new System.Windows.Forms.GroupBox();
             this.StopBitsComboBox = new System.Windows.Forms.ComboBox();
             this.DataBitsComboBox = new System.Windows.Forms.ComboBox();
@@ -55,9 +54,8 @@
             // 
             // COMPanel
             // 
-            this.COMPanel.Controls.Add(this.HelpButton);
-            this.COMPanel.Controls.Add(this.CancelButton);
-            this.COMPanel.Controls.Add(this.SaveButton);
+            this.COMPanel.Controls.Add(this.CloseButton);
+            this.COMPanel.Controls.Add(this.OpenButton);
             this.COMPanel.Controls.Add(this.COMSettingsGroupBox);
             this.COMPanel.Controls.Add(this.COMSelectGroupBox);
             this.COMPanel.Location = new System.Drawing.Point(0, -5);
@@ -65,32 +63,26 @@
             this.COMPanel.Size = new System.Drawing.Size(545, 355);
             this.COMPanel.TabIndex = 1;
             // 
-            // HelpButton
+            // CloseButton
             // 
-            this.HelpButton.Location = new System.Drawing.Point(464, 301);
-            this.HelpButton.Name = "HelpButton";
-            this.HelpButton.Size = new System.Drawing.Size(75, 23);
-            this.HelpButton.TabIndex = 4;
-            this.HelpButton.Text = "Help";
-            this.HelpButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Location = new System.Drawing.Point(441, 301);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(75, 23);
+            this.CloseButton.TabIndex = 3;
+            this.CloseButton.Text = "Close";
+            this.CloseButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Enabled = false;
             // 
-            // CancelButton
+            // OpenButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(354, 301);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(75, 23);
-            this.CancelButton.TabIndex = 3;
-            this.CancelButton.Text = "Cancel";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            // 
-            // SaveButton
-            // 
-            this.SaveButton.Location = new System.Drawing.Point(241, 301);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 23);
-            this.SaveButton.TabIndex = 2;
-            this.SaveButton.Text = "Save";
-            this.SaveButton.UseVisualStyleBackColor = true;
+            this.OpenButton.Location = new System.Drawing.Point(241, 301);
+            this.OpenButton.Name = "OpenButton";
+            this.OpenButton.Size = new System.Drawing.Size(75, 23);
+            this.OpenButton.TabIndex = 2;
+            this.OpenButton.Text = "Open";
+            this.OpenButton.UseVisualStyleBackColor = true;
+            this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
             // 
             // COMSettingsGroupBox
             // 
@@ -116,8 +108,8 @@
             this.StopBitsComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.StopBitsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StopBitsComboBox.FormattingEnabled = true;
-            this.StopBitsComboBox.Items.AddRange(new object[] {
-            "1"});
+            //this.StopBitsComboBox.Items.AddRange(new object[] {
+            //"1"});
             this.StopBitsComboBox.Location = new System.Drawing.Point(392, 72);
             this.StopBitsComboBox.Name = "StopBitsComboBox";
             this.StopBitsComboBox.Size = new System.Drawing.Size(121, 20);
@@ -128,8 +120,8 @@
             this.DataBitsComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.DataBitsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DataBitsComboBox.FormattingEnabled = true;
-            this.DataBitsComboBox.Items.AddRange(new object[] {
-            "8"});
+            //this.DataBitsComboBox.Items.AddRange(new object[] {
+            //"8"});
             this.DataBitsComboBox.Location = new System.Drawing.Point(392, 34);
             this.DataBitsComboBox.Name = "DataBitsComboBox";
             this.DataBitsComboBox.Size = new System.Drawing.Size(121, 20);
@@ -147,12 +139,12 @@
             // 
             this.ParityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ParityComboBox.FormattingEnabled = true;
-            this.ParityComboBox.Items.AddRange(new object[] {
-            "ODD",
-            "EVEN",
-            "MARK",
-            "SPACE",
-            "NONE"});
+            //this.ParityComboBox.Items.AddRange(new object[] {
+            //"ODD",
+            //"EVEN",
+            //"MARK",
+            //"SPACE",
+            //"NONE"});
             this.ParityComboBox.Location = new System.Drawing.Point(148, 72);
             this.ParityComboBox.Name = "ParityComboBox";
             this.ParityComboBox.Size = new System.Drawing.Size(121, 20);
@@ -161,17 +153,17 @@
             // BaudRateComboBox
             // 
             this.BaudRateComboBox.FormattingEnabled = true;
-            this.BaudRateComboBox.Items.AddRange(new object[] {
-            "1200",
-            "2400",
-            "4800",
-            "9600",
-            "19200",
-            "38400",
-            "43000",
-            "56000",
-            "57600",
-            "115200"});
+            //this.BaudRateComboBox.Items.AddRange(new object[] {
+            //"1200",
+            //"2400",
+            //"4800",
+            //"9600",
+            //"19200",
+            //"38400",
+            //"43000",
+            //"56000",
+            //"57600",
+            //"115200"});
             this.BaudRateComboBox.Location = new System.Drawing.Point(148, 34);
             this.BaudRateComboBox.Name = "BaudRateComboBox";
             this.BaudRateComboBox.Size = new System.Drawing.Size(121, 20);
@@ -277,6 +269,7 @@
             this.Controls.Add(this.COMPanel);
             this.Name = "ComSetting";
             this.Size = new System.Drawing.Size(648, 353);
+            this.Load += new System.EventHandler(this.ComSetting_Load);
             this.COMPanel.ResumeLayout(false);
             this.COMSettingsGroupBox.ResumeLayout(false);
             this.COMSettingsGroupBox.PerformLayout();
@@ -289,9 +282,8 @@
         #endregion
 
         public System.Windows.Forms.Panel COMPanel;
-        private System.Windows.Forms.Button HelpButton;
-        private System.Windows.Forms.Button CancelButton;
-        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button CloseButton;
+        private System.Windows.Forms.Button OpenButton;
         private System.Windows.Forms.GroupBox COMSettingsGroupBox;
         private System.Windows.Forms.ComboBox StopBitsComboBox;
         private System.Windows.Forms.ComboBox DataBitsComboBox;

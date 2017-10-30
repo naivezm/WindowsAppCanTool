@@ -65,12 +65,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CanToolDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ComSetting.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ComSetting.Designer.cs">
-      <DependentUpon>ComSetting.cs</DependentUpon>
-    </Compile>
     <Compile Include="Curve.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,9 +96,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ComSetting.resx">
-      <DependentUpon>ComSetting.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Curve.resx">
       <DependentUpon>Curve.cs</DependentUpon>
     </EmbeddedResource>

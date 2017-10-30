@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
+using System.Threading;
 
 namespace WindowsCanToolApp
 {
@@ -53,7 +55,7 @@ namespace WindowsCanToolApp
                    // MessageBox.Show("ssssss");
                     foreach (var item in query)
                     {
-
+                    
                         ABValue = item._A_B_;
                         SignalValue = item.Signal_Value;
                         int SplitIndexStart = ABValue.IndexOf(",");
@@ -66,9 +68,11 @@ namespace WindowsCanToolApp
                         int SignalValueDecimal = Convert.ToInt32(SignalValue, 16);
                         //推算出物理值
                         int Y= AValueInt * SignalValueDecimal + BValueInt;
+                
                      
                        // MessageBox.Show(X,Y.ToString());
                         this.chartControl1.Series[0].Points.Add(new SeriesPoint(item.Signal_Name,Y));
+                        //this.chartControl1.Series[0].Points.Add(new SeriesPoint(System.DateTime.Now.ToLongTimeString().ToString(), Y));
 
                     }
                     //int SplitIndexStart = ABValue.IndexOf(",");
